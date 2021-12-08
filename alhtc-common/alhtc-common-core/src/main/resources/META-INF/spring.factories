@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.alhtc.common.core.utils.SpringUtils
+
+  

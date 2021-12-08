@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.alhtc</groupId>
+    <artifactId>alhtc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>alhtc-gateway</module>
+        <module>alhtc-common</module>
+        <module>alhtc-modules</module>
+        <module>alhtc-api</module>
+        <module>alhtc-auth</module>
+    </modules>
+
+    <properties>
+        <alhtc.version>1.0-SNAPSHOT</alhtc.version>
+        <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
+        <spring.cloud.version>Hoxton.SR12</spring.cloud.version>
+        <spring.cloud.alibaba.version>2.2.7.RELEASE</spring.cloud.alibaba.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <jwt.version>0.9.1</jwt.version>
+        <commons.collections4.version>4.4</commons.collections4.version>
+        <pagehelper.boot.version>1.4.0</pagehelper.boot.version>
+        <mybatis.plus.version>3.4.3</mybatis.plus.version>
+        <spring.cloud.bootstrap>3.1.0</spring.cloud.bootstrap>
+        <poi.version>4.1.2</poi.version>
+        <commons.io.version>2.11.0</commons.io.version>
+        <commons.fileupload.version>1.4</commons.fileupload.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
+        <druid.version>1.2.8</druid.version>
+    </properties>
+
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bootstrap</artifactId>
+                <version>${spring.cloud.bootstrap}</version>
+            </dependency>
+            <!-- 线程传递值 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+            <!-- 阿里JSON解析器 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- Token生成与解析-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <!-- collections工具类 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons.collections4.version}</version>
+            </dependency>
+            <!-- pagehelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alhtc</groupId>
+                <artifactId>alhtc-common-core</artifactId>
+                <version>${alhtc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alhtc</groupId>
+                <artifactId>alhtc-common-redis</artifactId>
+                <version>${alhtc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alhtc</groupId>
+                <artifactId>alhtc-common-security</artifactId>
+                <version>${alhtc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alhtc</groupId>
+                <artifactId>alhtc-common-datascope</artifactId>
+                <version>${alhtc.version}</version>
+            </dependency>
+            <!-- 系统接口 -->
+            <dependency>
+                <groupId>com.alhtc</groupId>
+                <artifactId>alhtc-api-system</artifactId>
+                <version>${alhtc.version}</version>
+            </dependency>
+            <!-- alhtc Common Security -->
+            <dependency>
+                <groupId>com.alhtc</groupId>
+                <artifactId>alhtc-common-log</artifactId>
+                <version>${alhtc.version}</version>
+            </dependency>
+            <!-- excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+            <!-- io常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+            <!-- 文件上传工具类 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons.fileupload.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- bootstrap 启动器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- 启用过滤 即该资源中的变量将会被过滤器中的值替换 -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <spring.profile.active>dev</spring.profile.active>
+                <spring.cloud.nacos.config.server-addr>139.224.82.59:8848</spring.cloud.nacos.config.server-addr>
+                <spring.cloud.nacos.namespace>6240ee4a-7413-4275-aedc-34d1a50cf5fa</spring.cloud.nacos.namespace>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <!--私服配置 -->
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <name>Internal-Releases</name>
+            <url>https://packages.aliyun.com/maven/repository/2162101-release-SMSckh/
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <name>Internal-Snapshots</name>
+            <url>https://packages.aliyun.com/maven/repository/2162101-snapshot-dLYko8/
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
