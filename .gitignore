@@ -1,10 +1,7 @@
 # Project exclude paths
-/alhtc-api/alhtc-api-system/target/
-/alhtc-auth/target/
-/alhtc-common/alhtc-common-core/target/
-/alhtc-common/alhtc-common-datascope/target/
-/alhtc-common/alhtc-common-log/target/
-/alhtc-common/alhtc-common-redis/target/
-/alhtc-common/alhtc-common-security/target/
-/alhtc-gateway/target/
-/alhtc-modules/alhtc-modules-system/target/
+#忽略所有target目录
+target/
+#忽略所有.idea目录
+.idea/
+#忽略所有.iml文件
+*.iml
