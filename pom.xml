@@ -15,6 +15,7 @@
         <module>alhtc-modules</module>
         <module>alhtc-api</module>
         <module>alhtc-auth</module>
+        <module>alhtc-visual</module>
     </modules>
 
     <properties>
@@ -36,6 +37,7 @@
         <kaptcha.version>2.3.2</kaptcha.version>
         <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
         <druid.version>1.2.8</druid.version>
+        <spring-boot-admin.version>2.3.1</spring-boot-admin.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -162,6 +164,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+            <!-- SpringBoot Admin -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
         </dependencies>
 
