@@ -229,7 +229,7 @@
             <properties>
                 <spring.profile.active>dev</spring.profile.active>
                 <spring.cloud.nacos.config.server-addr>139.224.82.59:8848</spring.cloud.nacos.config.server-addr>
-                <spring.cloud.nacos.namespace>6240ee4a-7413-4275-aedc-34d1a50cf5fa</spring.cloud.nacos.namespace>
+                <spring.cloud.nacos.namespace>0dccc3b3-83e3-4ed6-bd0d-868051f2fff8</spring.cloud.nacos.namespace>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
