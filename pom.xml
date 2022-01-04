@@ -112,7 +112,7 @@
             <dependency>
                 <groupId>com.alhtc</groupId>
                 <artifactId>alhtc-common-redis</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${alhtc.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alhtc</groupId>
