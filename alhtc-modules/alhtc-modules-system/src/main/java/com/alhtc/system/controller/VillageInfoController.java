@@ -22,65 +22,60 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/info")
-public class VillageInfoController extends BaseController
-{
-    @Autowired
-    private IVillageInfoService infoService;
+public class VillageInfoController extends BaseController {
 
-    /**
-     * 获取通知公告列表
-     */
-    @RequiresPermissions("village:info:list")
-    @GetMapping("/list")
-    public TableDataInfo list(VillageInfo info)
-    {
-        startPage();
-        List<VillageInfo> list = infoService.selectInfoList(info);
-        return getDataTable(list);
-    }
+	@Autowired
+	private IVillageInfoService infoService;
 
-    /**
-     * 根据通知公告编号获取详细信息
-     */
-    @RequiresPermissions("village:info:query")
-    @GetMapping(value = "/{infoId}")
-    public AjaxResult getInfo(@PathVariable Long infoId)
-    {
-        return AjaxResult.success(infoService.selectInfoById(infoId));
-    }
+	/**
+	 * 获取通知公告列表
+	 */
+	@RequiresPermissions("village:info:list")
+	@GetMapping("/list")
+	public TableDataInfo list(VillageInfo info) {
+		startPage();
+		List<VillageInfo> list = infoService.selectInfoList(info);
+		return getDataTable(list);
+	}
 
-    /**
-     * 新增通知公告
-     */
-    @RequiresPermissions("village:info:add")
-    @Log(title = "发布公告", businessType = BusinessType.INSERT)
-    @PostMapping
-    public AjaxResult add(@Validated @RequestBody VillageInfo info)
-    {
-        info.setCreateBy(SecurityUtils.getUsername());
-        return toAjax(infoService.insertInfo(info));
-    }
+	/**
+	 * 根据通知公告编号获取详细信息
+	 */
+	@RequiresPermissions("village:info:query")
+	@GetMapping(value = "/{infoId}")
+	public AjaxResult getInfo(@PathVariable Long infoId) {
+		return AjaxResult.success(infoService.selectInfoById(infoId));
+	}
 
-    /**
-     * 修改通知公告
-     */
-    @RequiresPermissions("village:info:edit")
-    @Log(title = "发布公告", businessType = BusinessType.UPDATE)
-    @PutMapping
-    public AjaxResult edit(@Validated @RequestBody VillageInfo info)
-    {
-        info.setUpdateBy(SecurityUtils.getUsername());
-        return toAjax(infoService.updateInfo(info));
-    }
+	/**
+	 * 新增通知公告
+	 */
+	@RequiresPermissions("village:info:add")
+	@Log(title = "发布公告", businessType = BusinessType.INSERT)
+	@PostMapping
+	public AjaxResult add(@Validated @RequestBody VillageInfo info) {
+		info.setCreateBy(SecurityUtils.getUsername());
+		return toAjax(infoService.insertInfo(info));
+	}
 
-    /**
-     * 删除通知公告
-     */
-    @RequiresPermissions("village:info:remove")
-    @Log(title = "发布公告", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{infoIds}")
-    public AjaxResult remove(@PathVariable Long[] infoIds)
-    {
-        return toAjax(infoService.deleteInfoByIds(infoIds));
-    }
+	/**
+	 * 修改通知公告
+	 */
+	@RequiresPermissions("village:info:edit")
+	@Log(title = "发布公告", businessType = BusinessType.UPDATE)
+	@PutMapping
+	public AjaxResult edit(@Validated @RequestBody VillageInfo info) {
+		info.setUpdateBy(SecurityUtils.getUsername());
+		return toAjax(infoService.updateInfo(info));
+	}
+
+	/**
+	 * 删除通知公告
+	 */
+	@RequiresPermissions("village:info:remove")
+	@Log(title = "发布公告", businessType = BusinessType.DELETE)
+	@DeleteMapping("/{infoIds}")
+	public AjaxResult remove(@PathVariable Long[] infoIds) {
+		return toAjax(infoService.deleteInfoByIds(infoIds));
+	}
 }
