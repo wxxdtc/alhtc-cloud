@@ -226,28 +226,6 @@
     <profiles>
         <profile>
             <id>dev</id>
-            <repositories>
-                <repository>
-                    <id>rdc-releases</id>
-                    <url>https://packages.aliyun.com/maven/repository/2162101-release-SMSckh/</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </repository>
-                <repository>
-                    <id>rdc-snapshots</id>
-                    <url>https://packages.aliyun.com/maven/repository/2162101-snapshot-dLYko8/</url>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
             <properties>
                 <spring.profile.active>dev</spring.profile.active>
                 <spring.cloud.nacos.config.server-addr>139.224.82.59:8848</spring.cloud.nacos.config.server-addr>
@@ -258,6 +236,29 @@
             </activation>
         </profile>
     </profiles>
+
+    <repositories>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2162101-release-SMSckh/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2162101-snapshot-dLYko8/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <!--私服配置 -->
     <distributionManagement>
