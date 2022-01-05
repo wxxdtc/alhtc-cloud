@@ -4,6 +4,7 @@ import com.alhtc.common.security.annotation.EnableAlhtcFeignClients;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * 认证授权中心
@@ -11,7 +12,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @author wangxiaoxu
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@EnableAlhtcFeignClients
+//@EnableAlhtcFeignClients
+@EnableFeignClients
 public class AlhtcAuthApplication {
 
 	public static void main(String[] args) {
