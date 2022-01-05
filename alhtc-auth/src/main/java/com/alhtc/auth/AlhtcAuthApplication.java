@@ -12,8 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author wangxiaoxu
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-//@EnableAlhtcFeignClients
-@EnableFeignClients
+@EnableAlhtcFeignClients
 public class AlhtcAuthApplication {
 
 	public static void main(String[] args) {
